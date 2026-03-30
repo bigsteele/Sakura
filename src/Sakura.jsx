@@ -28,10 +28,10 @@ const MENU = [
   {id:14,n:"Crab Rangoon",p:7.5,c:"Appetizers",d:"Six pieces — cream cheese, crab, crispy wonton"},
   {id:15,n:"Calamari Tempura",p:9,c:"Appetizers",d:"Light batter, spicy mayo, lemon"},
   {id:16,n:"Tuna Tataki",p:12,c:"Appetizers",d:"Seared ahi, ponzu, microgreens"},
-  {id:20,n:"Chef's Special Boat",p:76,c:"Sushi Bar",d:"The full experience — premium sashimi and nigiri for two, served on traditional wooden boat",pop:1},
+  {id:20,n:"Chef's Special Boat",p:76,c:"Sushi Bar",d:"The full experience — premium sashimi and nigiri for two, served on traditional wooden boat",pop:1,img:"/gallery/chefs-special-boat.png"},
   {id:21,n:"Sushi Deluxe",p:28,c:"Sushi Bar",d:"Fifteen pieces, chef's selection nigiri"},
-  {id:22,n:"Sashimi Deluxe",p:32,c:"Sushi Bar",d:"Eighteen slices, chef's selection"},
-  {id:23,n:"Chirashi",p:22,c:"Sushi Bar",d:"Assorted sashimi over seasoned rice"},
+  {id:22,n:"Sashimi Deluxe",p:32,c:"Sushi Bar",d:"Eighteen slices, chef's selection",img:"/gallery/sushi-combo-b.png"},
+  {id:23,n:"Chirashi",p:22,c:"Sushi Bar",d:"Assorted sashimi over seasoned rice",img:"/gallery/chirashi-bowl.png"},
   {id:30,n:"Sakura Roll",p:20,c:"Special Rolls",d:"Ten pieces — shrimp tempura, spicy tuna, avocado, house sakura sauce",pop:1},
   {id:31,n:"Dragon Roll",p:16,c:"Special Rolls",d:"Shrimp tempura, eel, avocado, eel sauce"},
   {id:32,n:"Rainbow Roll",p:17,c:"Special Rolls",d:"California base, five-fish sashimi topping"},
@@ -58,10 +58,10 @@ const MENU = [
   {id:71,n:"Phở Bò",p:15,c:"Pho & Noodles",d:"Rare beef and brisket — aromatic star anise broth"},
   {id:72,n:"Tom Yum Noodle",p:17,c:"Pho & Noodles",d:"Spicy lemongrass broth, chicken, rice noodles",s:1},
   {id:73,n:"Wonton Noodle Soup",p:14,c:"Pho & Noodles",d:"Pork wontons, egg noodles, clear broth"},
-  {id:80,n:"Pad Thai",p:16,c:"Wok & Fusion",d:"Tamarind, rice noodle, peanut, bean sprout, lime",pop:1},
-  {id:81,n:"Cơm Thịt Nướng",p:15,c:"Wok & Fusion",d:"Grilled pork over rice, fried egg, pickled daikon"},
+  {id:80,n:"Pad Thai",p:16,c:"Wok & Fusion",d:"Tamarind, rice noodle, peanut, bean sprout, lime",pop:1,img:"/gallery/pad-thai.png"},
+  {id:81,n:"Cơm Thịt Nướng",p:15,c:"Wok & Fusion",d:"Grilled pork over rice, fried egg, pickled daikon",img:"/gallery/com-thit-nuong.png"},
   {id:82,n:"Singapore Mei Fun",p:17.5,c:"Wok & Fusion",d:"Curry noodles, shrimp, pork, vegetables",s:1},
-  {id:83,n:"Sesame Tuna",p:21,c:"Wok & Fusion",d:"Seared ahi, black and white sesame, wasabi aioli"},
+  {id:83,n:"Sesame Tuna",p:21,c:"Wok & Fusion",d:"Seared ahi, black and white sesame, wasabi aioli",img:"/gallery/sesame-crusted-tuna.png"},
   {id:84,n:"Thai Basil Stir Fry",p:16,c:"Wok & Fusion",d:"Holy basil, bell pepper, chili garlic, choice of protein",s:1},
   {id:90,n:"Chicken Tempura",p:14,c:"Tempura",d:"Light batter, tempura dipping sauce"},
   {id:91,n:"Shrimp Tempura",p:16,c:"Tempura",d:"Six jumbo shrimp, golden batter"},
@@ -90,27 +90,13 @@ const MENU = [
  * Claude Code: download each src to /public/gallery/{filename}, then update src to /gallery/{filename}
  * Layout: "wide" = spans 8 of 12 columns (16:9), default = spans 4 columns (1:1)
  */
-const GALLERY = [
-  { src:"/gallery/chefs-special-boat.png", label:"Chef's Special Boat", cat:"Sushi Bar", span:"wide" },
-  { src:"/gallery/sakura-special-roll.png", label:"Sakura Special Roll", cat:"Special Rolls" },
-  { src:"/gallery/sesame-crusted-tuna.png", label:"Sesame Crusted Tuna", cat:"Asian Fusion" },
-  { src:"/gallery/pad-thai.png", label:"Pad Thai", cat:"Asian Fusion", span:"wide" },
-  { src:"/gallery/chirashi-bowl.png", label:"Chirashi Bowl", cat:"Sushi Bar" },
-  { src:"/gallery/bo-luc-lac.png", label:"Bò Lúc Lắc", cat:"Asian Fusion" },
-  { src:"/gallery/bibimbap.jpg", label:"Bibimbap", cat:"Asian Fusion" },
-  { src:"/gallery/fuji-mountain-roll.png", label:"Fuji Mountain Roll", cat:"Special Rolls", span:"wide" },
-  { src:"/gallery/sushi-combo-a.png", label:"Sushi Combo A", cat:"Sushi Bar" },
-  { src:"/gallery/com-thit-nuong.png", label:"Cơm Thịt Nướng", cat:"Asian Fusion" },
-  { src:"/gallery/hurricane-roll.jpg", label:"Hurricane Roll", cat:"Special Rolls" },
-  { src:"/gallery/korean-bulgogi.png", label:"Korean Bulgogi", cat:"Asian Fusion", span:"wide" },
-  { src:"/gallery/dancing-shrimp.png", label:"Dancing Shrimp Roll", cat:"Special Rolls" },
-  { src:"/gallery/orange-lake-roll.png", label:"Orange Lake Roll", cat:"Special Rolls" },
-  { src:"/gallery/firecracker-shrimp.png", label:"Firecracker Shrimp", cat:"Asian Fusion", span:"wide" },
-  { src:"/gallery/unadon.jpg", label:"Unadon", cat:"Sushi Bar" },
-  { src:"/gallery/golden-roll.png", label:"Golden Roll", cat:"Special Rolls" },
-  { src:"/gallery/omelet-rice.png", label:"Omelet Rice", cat:"Asian Fusion" },
-  { src:"/gallery/sushi-combo-b.png", label:"Sushi Combo B", cat:"Sushi Bar", span:"wide" },
-  { src:"/gallery/tempura-salmon-roll.png", label:"Tempura Salmon Roll", cat:"Special Rolls" },
+const FEATURED = [
+  { src:"/gallery/chefs-special-boat.png", label:"Chef's Special Boat", cat:"Sushi Bar", menuId:20 },
+  { src:"/gallery/pad-thai.png", label:"Pad Thai", cat:"Wok & Fusion", menuId:80 },
+  { src:"/gallery/chirashi-bowl.png", label:"Chirashi Bowl", cat:"Sushi Bar", menuId:23 },
+  { src:"/gallery/sesame-crusted-tuna.png", label:"Sesame Crusted Tuna", cat:"Wok & Fusion", menuId:83 },
+  { src:"/gallery/com-thit-nuong.png", label:"Cơm Thịt Nướng", cat:"Wok & Fusion", menuId:81 },
+  { src:"/gallery/sushi-combo-b.png", label:"Sashimi Deluxe", cat:"Sushi Bar", menuId:22 },
 ];
 
 function Sakura() {
@@ -121,9 +107,8 @@ function Sakura() {
   const [q, setQ] = useState("");
   const [placed, setPlaced] = useState(false);
   const [heroLoaded, setHeroLoaded] = useState(false);
-  const [lightbox, setLightbox] = useState(null);
   const menuRef = useRef(null);
-  const galleryRef = useRef(null);
+  const featuredRef = useRef(null);
 
   useEffect(() => { setTimeout(() => setHeroLoaded(true), 100); }, []);
   useEffect(() => {
@@ -131,15 +116,6 @@ function Sakura() {
     window.addEventListener("scroll", h, { passive: true });
     return () => window.removeEventListener("scroll", h);
   }, []);
-  useEffect(() => {
-    document.body.style.overflow = lightbox !== null ? "hidden" : "";
-  }, [lightbox]);
-  useEffect(() => {
-    if (lightbox === null) return;
-    const h = (e) => { if (e.key === "Escape") setLightbox(null); if (e.key === "ArrowRight") setLightbox(p => (p + 1) % GALLERY.length); if (e.key === "ArrowLeft") setLightbox(p => (p - 1 + GALLERY.length) % GALLERY.length); };
-    window.addEventListener("keydown", h);
-    return () => window.removeEventListener("keydown", h);
-  }, [lightbox]);
 
   const add = useCallback((item) => setCart(p => {
     const e = p.find(c => c.id === item.id);
@@ -164,7 +140,7 @@ function Sakura() {
   }, [filtered]);
 
   const goMenu = () => menuRef.current?.scrollIntoView({ behavior: "smooth" });
-  const goGallery = () => galleryRef.current?.scrollIntoView({ behavior: "smooth" });
+  const goFeatured = () => featuredRef.current?.scrollIntoView({ behavior: "smooth" });
 
   return (
     <div style={{ background: "#060606", color: "#D6D1CA", minHeight: "100vh", overflowX: "hidden" }}>
@@ -222,29 +198,35 @@ function Sakura() {
         @keyframes breathe{0%,100%{opacity:0.03}50%{opacity:0.06}}
         @keyframes fadeIn{from{opacity:0}to{opacity:1}}
 
-        /* Gallery */
-        .g-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:3px}
-        .g-cell{position:relative;overflow:hidden;cursor:pointer;background:#0A0A08}
-        .g-cell img{width:100%;height:100%;object-fit:cover;display:block;filter:brightness(0.7) contrast(1.05) saturate(0.9);transition:all 0.6s cubic-bezier(0.2,0,0,1)}
-        .g-cell:hover img{filter:brightness(0.85) contrast(1) saturate(1);transform:scale(1.04)}
-        .g-info{position:absolute;bottom:0;left:0;right:0;padding:24px 16px 14px;background:linear-gradient(0deg, rgba(6,6,6,0.85) 0%, transparent 100%);opacity:0;transform:translateY(8px);transition:all 0.4s cubic-bezier(0.2,0,0,1)}
-        .g-cell:hover .g-info{opacity:1;transform:translateY(0)}
+        /* Featured grid */
+        .feat-grid{display:grid;grid-template-columns:1.2fr 1fr 1fr;grid-template-rows:1fr 1fr;gap:3px;max-height:420px}
+        .feat-cell{position:relative;overflow:hidden;cursor:pointer;background:#0A0A08}
+        .feat-cell:first-child{grid-row:span 2}
+        .feat-cell img{width:100%;height:100%;object-fit:cover;display:block;filter:brightness(0.7) contrast(1.05) saturate(0.9);transition:all 0.6s cubic-bezier(0.2,0,0,1)}
+        .feat-cell:hover img{filter:brightness(0.85) contrast(1) saturate(1);transform:scale(1.04)}
+        .feat-info{position:absolute;bottom:0;left:0;right:0;padding:24px 16px 14px;background:linear-gradient(0deg, rgba(6,6,6,0.85) 0%, transparent 100%);opacity:0;transform:translateY(8px);transition:all 0.4s cubic-bezier(0.2,0,0,1)}
+        .feat-cell:hover .feat-info{opacity:1;transform:translateY(0)}
 
-        /* Lightbox */
-        .lb{position:fixed;inset:0;z-index:200;background:rgba(6,6,6,0.94);backdrop-filter:blur(24px);display:flex;align-items:center;justify-content:center;animation:fadeIn 0.3s ease;cursor:pointer}
-        .lb-img{max-width:min(85vw,900px);max-height:80vh;object-fit:contain;border:1px solid rgba(214,209,202,0.04);cursor:default}
-        .lb-nav{position:absolute;top:50%;transform:translateY(-50%);background:none;border:1px solid rgba(214,209,202,0.1);color:#7A756F;width:44px;height:44px;cursor:pointer;display:flex;align-items:center;justify-content:center;font-family:'Space Mono',monospace;font-size:16px;transition:all 0.2s}
-        .lb-nav:hover{border-color:rgba(200,120,140,0.3);color:#C8788C}
+        /* Menu hover preview (desktop) */
+        .m-preview{position:absolute;right:calc(100% + 16px);top:50%;transform:translateY(-50%) translateX(8px);width:200px;aspect-ratio:4/3;object-fit:cover;border:1px solid rgba(214,209,202,0.06);border-radius:2px;opacity:0;pointer-events:none;transition:opacity 0.35s cubic-bezier(0.2,0,0,1), transform 0.35s cubic-bezier(0.2,0,0,1);filter:brightness(0.75) contrast(1.05) saturate(0.9);z-index:10}
+        .m-row:hover .m-preview{opacity:1;transform:translateY(-50%) translateX(0)}
 
+        /* Mobile image reveal */
+        .m-img-reveal{max-height:0;overflow:hidden;transition:max-height 0.4s cubic-bezier(0.2,0,0,1), opacity 0.3s;opacity:0}
+        .m-img-reveal.open{max-height:220px;opacity:1;margin-top:8px}
+
+        @media(min-width:721px){
+          .m-img-reveal{display:none !important}
+        }
         @media(max-width:720px){
+          .m-preview{display:none !important}
           .hero-flex{flex-direction:column !important}
           .hero-left{max-width:100% !important}
           .hero-aside{display:none !important}
           .foot-cols{grid-template-columns:1fr !important}
           .m-row{grid-template-columns:1fr 60px 80px !important}
-          .g-grid{grid-template-columns:repeat(6,1fr) !important}
-          .g-w{grid-column:span 6 !important}
-          .g-r{grid-column:span 3 !important}
+          .feat-grid{grid-template-columns:1fr 1fr !important;max-height:none !important}
+          .feat-cell:first-child{grid-row:span 1 !important}
         }
       `}</style>
 
@@ -255,7 +237,7 @@ function Sakura() {
           <span style={{fontFamily:"'EB Garamond',serif",fontSize:16,fontWeight:400,color:"#D6D1CA",letterSpacing:"0.05em"}}>Sakura</span>
         </a>
         <div style={{display:"flex",alignItems:"center",gap:32}}>
-          <a className="nav-a" onClick={goGallery}>Gallery</a>
+          <a className="nav-a" onClick={goFeatured}>Featured</a>
           <a className="nav-a" onClick={goMenu}>Menu</a>
           <a className="nav-a" href="https://sakuraasianfusion.com/reservation">Reserve</a>
           <a className="nav-a" href="https://sakuraasianfusion.com/contactus">Contact</a>
@@ -308,24 +290,21 @@ function Sakura() {
         </div>
       </section>
 
-      {/* ═══ GALLERY ═══ */}
-      <section ref={galleryRef} style={{position:"relative"}}>
+      {/* ═══ FEATURED ═══ */}
+      <section ref={featuredRef} style={{position:"relative"}}>
         <div style={{maxWidth:1100,margin:"0 auto",padding:"60px clamp(20px,4vw,48px) 20px",display:"flex",alignItems:"baseline",justifyContent:"space-between"}}>
           <div>
             <div style={{fontFamily:"'Sora',sans-serif",fontSize:10,fontWeight:400,letterSpacing:"0.25em",textTransform:"uppercase",color:"#C8788C",marginBottom:8}}>From Our Kitchen</div>
-            <h2 style={{fontFamily:"'EB Garamond',serif",fontSize:36,fontWeight:400,fontStyle:"italic",letterSpacing:"-0.01em"}}>Gallery</h2>
+            <h2 style={{fontFamily:"'EB Garamond',serif",fontSize:36,fontWeight:400,fontStyle:"italic",letterSpacing:"-0.01em"}}>Featured</h2>
           </div>
-          <span style={{fontFamily:"'Space Mono',monospace",fontSize:10,color:"#3D3A36"}}>{GALLERY.length} photos</span>
         </div>
         <div style={{maxWidth:1100,margin:"0 auto",padding:"0 clamp(20px,4vw,48px) 80px"}}>
           <div style={{height:1,background:"linear-gradient(90deg, rgba(200,120,140,0.3), rgba(214,209,202,0.04))",marginBottom:20}} />
-          <div className="g-grid">
-            {GALLERY.map((img, idx) => (
-              <div key={idx} className={`g-cell ${img.span==="wide"?"g-w":"g-r"}`}
-                style={{gridColumn:img.span==="wide"?"span 8":"span 4",aspectRatio:img.span==="wide"?"16/9":"1"}}
-                onClick={()=>setLightbox(idx)}>
+          <div className="feat-grid">
+            {FEATURED.map((img, idx) => (
+              <div key={idx} className="feat-cell" onClick={goMenu}>
                 <img src={img.src} alt={`${img.label} — ${img.cat}`} loading="lazy" />
-                <div className="g-info">
+                <div className="feat-info">
                   <div style={{fontFamily:"'EB Garamond',serif",fontSize:16,fontWeight:400,color:"#D6D1CA",marginBottom:2}}>{img.label}</div>
                   <div style={{fontFamily:"'Space Mono',monospace",fontSize:9,color:"#7A756F",letterSpacing:"0.06em"}}>{img.cat}</div>
                 </div>
@@ -334,20 +313,6 @@ function Sakura() {
           </div>
         </div>
       </section>
-
-      {/* ═══ LIGHTBOX ═══ */}
-      {lightbox!==null&&(
-        <div className="lb" onClick={()=>setLightbox(null)}>
-          <button onClick={()=>setLightbox(null)} style={{position:"absolute",top:20,right:24,background:"none",border:"none",color:"#5A5650",fontFamily:"'Space Mono',monospace",fontSize:18,cursor:"pointer"}}>✕</button>
-          <button className="lb-nav" style={{left:20}} onClick={e=>{e.stopPropagation();setLightbox(p=>(p-1+GALLERY.length)%GALLERY.length)}}>←</button>
-          <img className="lb-img" src={GALLERY[lightbox].src} alt={GALLERY[lightbox].label} onClick={e=>e.stopPropagation()} />
-          <button className="lb-nav" style={{right:20}} onClick={e=>{e.stopPropagation();setLightbox(p=>(p+1)%GALLERY.length)}}>→</button>
-          <div style={{position:"absolute",bottom:24,left:"50%",transform:"translateX(-50%)",textAlign:"center"}}>
-            <div style={{fontFamily:"'EB Garamond',serif",fontSize:20,fontStyle:"italic",color:"#D6D1CA",marginBottom:4}}>{GALLERY[lightbox].label}</div>
-            <div style={{fontFamily:"'Space Mono',monospace",fontSize:10,color:"#5A5650"}}>{GALLERY[lightbox].cat}&ensp;·&ensp;{lightbox+1} / {GALLERY.length}</div>
-          </div>
-        </div>
-      )}
 
       {/* ═══ MENU ═══ */}
       <section ref={menuRef} style={{maxWidth:700,margin:"0 auto",padding:"80px clamp(20px,4vw,48px) 120px"}}>
@@ -381,7 +346,7 @@ function Sakura() {
           </div>
           <div>
             <div style={{fontFamily:"'Sora',sans-serif",fontSize:10,fontWeight:400,letterSpacing:"0.15em",textTransform:"uppercase",color:"#5A5650",marginBottom:16}}>Navigate</div>
-            {[["Menu","#"],["Gallery","#"],["Reservations","https://sakuraasianfusion.com/reservation"],["Contact","https://sakuraasianfusion.com/contactus"],["About","https://sakuraasianfusion.com/abous-us"]].map(([l,u])=>(<a key={l} href={u} style={{display:"block",fontFamily:"'Sora',sans-serif",fontSize:12,fontWeight:300,color:"#3D3A36",textDecoration:"none",marginBottom:8,transition:"color 0.3s"}} onMouseOver={e=>e.target.style.color="#7A756F"} onMouseOut={e=>e.target.style.color="#3D3A36"}>{l}</a>))}
+            {[["Menu","#"],["Featured","#"],["Reservations","https://sakuraasianfusion.com/reservation"],["Contact","https://sakuraasianfusion.com/contactus"],["About","https://sakuraasianfusion.com/abous-us"]].map(([l,u])=>(<a key={l} href={u} style={{display:"block",fontFamily:"'Sora',sans-serif",fontSize:12,fontWeight:300,color:"#3D3A36",textDecoration:"none",marginBottom:8,transition:"color 0.3s"}} onMouseOver={e=>e.target.style.color="#7A756F"} onMouseOut={e=>e.target.style.color="#3D3A36"}>{l}</a>))}
           </div>
           <div>
             <div style={{fontFamily:"'Sora',sans-serif",fontSize:10,fontWeight:400,letterSpacing:"0.15em",textTransform:"uppercase",color:"#5A5650",marginBottom:16}}>Legal</div>
@@ -440,15 +405,26 @@ function Sakura() {
 
 function Row({item,cart,add,upd}) {
   const ic = cart.find(c=>c.id===item.id);
+  const [imgOpen, setImgOpen] = useState(false);
   return (
-    <div className="m-row">
-      <div>
+    <div className="m-row" style={{position:"relative"}}>
+      {item.img && <img className="m-preview" src={item.img} alt={item.n} loading="lazy" />}
+      <div onClick={item.img ? ()=>setImgOpen(o=>!o) : undefined} style={item.img ? {cursor:"pointer"} : undefined}>
         <div style={{display:"flex",alignItems:"center"}}>
           <span className="m-name">{item.n}</span>
+          {item.img&&<span className="tag" style={{color:"#5A5650",background:"rgba(214,209,202,0.04)",fontSize:8,letterSpacing:0}}>&#x25CE;</span>}
           {item.pop&&<span className="tag" style={{color:"#C9A96E",background:"rgba(201,169,110,0.08)"}}>popular</span>}
           {item.s&&<span className="tag" style={{color:"#C8384B",background:"rgba(200,56,75,0.08)"}}>spicy</span>}
         </div>
         <div className="m-desc">{item.d}</div>
+        {item.img && (
+          <div className={`m-img-reveal${imgOpen?" open":""}`}>
+            <img src={item.img} alt={item.n} loading="lazy"
+              style={{width:"100%",aspectRatio:"16/9",objectFit:"cover",marginTop:8,
+                filter:"brightness(0.75) contrast(1.05) saturate(0.9)",
+                border:"1px solid rgba(214,209,202,0.04)",borderRadius:2}} />
+          </div>
+        )}
       </div>
       <div className="m-price">{item.p.toFixed(2)}</div>
       <div style={{display:"flex",justifyContent:"flex-end"}}>
