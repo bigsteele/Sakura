@@ -199,9 +199,9 @@ function Sakura() {
         @keyframes fadeIn{from{opacity:0}to{opacity:1}}
 
         /* Featured grid */
-        .feat-grid{display:grid;grid-template-columns:1.2fr 1fr 1fr;grid-template-rows:1fr 1fr;gap:3px;max-height:420px}
+        .feat-grid{display:grid;grid-template-columns:1.2fr 1fr 1fr;grid-template-rows:200px 200px;gap:3px}
         .feat-cell{position:relative;overflow:hidden;cursor:pointer;background:#0A0A08}
-        .feat-cell:first-child{grid-row:span 2}
+        .feat-cell:first-child{grid-row:span 2;height:100%}
         .feat-cell img{width:100%;height:100%;object-fit:cover;display:block;filter:brightness(0.7) contrast(1.05) saturate(0.9);transition:all 0.6s cubic-bezier(0.2,0,0,1)}
         .feat-cell:hover img{filter:brightness(0.85) contrast(1) saturate(1);transform:scale(1.04)}
         .feat-info{position:absolute;bottom:0;left:0;right:0;padding:24px 16px 14px;background:linear-gradient(0deg, rgba(6,6,6,0.85) 0%, transparent 100%);opacity:0;transform:translateY(8px);transition:all 0.4s cubic-bezier(0.2,0,0,1)}
@@ -225,7 +225,7 @@ function Sakura() {
           .hero-aside{display:none !important}
           .foot-cols{grid-template-columns:1fr !important}
           .m-row{grid-template-columns:1fr 60px 80px !important}
-          .feat-grid{grid-template-columns:1fr 1fr !important;max-height:none !important}
+          .feat-grid{grid-template-columns:1fr 1fr !important;grid-template-rows:160px 160px 160px !important}
           .feat-cell:first-child{grid-row:span 1 !important}
         }
       `}</style>
